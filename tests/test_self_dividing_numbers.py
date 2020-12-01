@@ -1,4 +1,5 @@
-import self_dividing_numbers
+from tasks import self_dividing_numbers
+
 
 def assert_returns_same_as_left(left: int, right: int):
     actual = self_dividing_numbers.self_dividing_numbers(left, right)
