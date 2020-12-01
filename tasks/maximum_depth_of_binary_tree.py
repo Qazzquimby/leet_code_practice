@@ -1,5 +1,4 @@
 import typing as t
-import math
 
 
 class TreeNode:
@@ -21,8 +20,10 @@ class TreeNode:
         return f"{self.val}({left}, {right})"
 
 
-def get_current_depth(index):
-    return math.ceil(math.log(index + 2) / math.log(2))
+def get_tree_depth(node: TreeNode) -> int:
+    if node is None:
+        return 0
+    return 1 + max(get_tree_depth(node.left), get_tree_depth(node.right))
 
 
 def get_left(index: int, flattened: t.List[int]):
@@ -42,19 +43,12 @@ def get_right(index: int, flattened: t.List[int]):
 
 
 def get_node(index: int, flattened: t.List[int]):
-    return TreeNode(flattened[index], get_left(index, flattened), get_right(index, flattened))
+    return TreeNode(
+        val=flattened[index],
+        left=get_left(index, flattened),
+        right=get_right(index, flattened)
+    )
 
 
 def make_tree(flattened: t.List[int]):
     return get_node(index=0, flattened=flattened)
-
-
-def get_flattened_tree_depth(flattened: t.List[int]):
-    depth = math.ceil(math.log(len(flattened) + 1) / math.log(2))
-    return depth
-
-
-def get_tree_depth(node: TreeNode) -> int:
-    if node is None:
-        return 0
-    return 1 + max(get_tree_depth(node.left), get_tree_depth(node.right))
