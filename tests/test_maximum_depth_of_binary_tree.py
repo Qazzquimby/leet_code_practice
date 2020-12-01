@@ -1,25 +1,6 @@
 from tasks.maximum_depth_of_binary_tree import make_tree, get_flattened_tree_depth, TreeNode, get_tree_depth
 
 
-def test_get_flattened_tree_depth__when_empty__0():
-    actual = get_flattened_tree_depth([])
-    expected = 0
-    assert expected == actual
-
-
-def test_get_flattened_tree_depth_when_1_item__1():
-    actual = get_flattened_tree_depth([5])
-    expected = 1
-    assert expected == actual
-
-
-def test_get_flattened_tree_depth_when_3_item__2():
-    actual = get_flattened_tree_depth([1, 2, 3])
-    expected = 2
-    assert expected == actual
-
-
-# [3,9,20,null,null,15,7]
 def test_make_tree__when_1_item__1_node():
     actual = make_tree([3])
     expected = TreeNode(3)
