@@ -1,0 +1,2 @@
+# leet_code_practice
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/da9ab9542fd648cea3fbeb7273f883a3)](https://app.codacy.com/gh/Qazzquimby/leet_code_practice?utm_source=github.com&utm_medium=referral&utm_content=Qazzquimby/leet_code_practice&utm_campaign=Badge_Grade)
